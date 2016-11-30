@@ -1,0 +1,2 @@
+class ProductsLab < ApplicationRecord
+end
