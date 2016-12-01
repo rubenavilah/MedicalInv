@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root to: 'static_pages#welcome'
   devise_for :users, controllers: {
           sessions: 'users/sessions',
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
           passwords: 'users/passwords'
   }
   resources :labs
+  resources :products
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
