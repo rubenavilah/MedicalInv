@@ -5,5 +5,6 @@ Rails.application.routes.draw do
           registrations: 'users/registrations',
           passwords: 'users/passwords'
   }
+  resources :labs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
