@@ -19,6 +19,9 @@ class LabsController < ApplicationController
     @lab = Lab.new(lab_params)
     if @lab.save
       redirect_to labs_path
+    else
+      flash[:error] = "Experimento Fallido, estamos en problemas :("
+      render "new"
     end
   end
 
