@@ -31,7 +31,9 @@
   </div>
   <div class="form-group">
     <%= f.label :product_image%>
-    <input type="file" value="<%= @product.product_image %>" id="product_image" class="form-control">
+    <div>
+        <%= f.file_field :product_image %>
+    </div>
   </div>
   <%= f.submit "#{form_name} product", class: "btn btn-primary" %>
   <a href="<%= products_path %>" class="btn btn-default"> View all </a>

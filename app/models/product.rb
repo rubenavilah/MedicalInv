@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  mount_uploader :product_image, ProductImageUploader  
   has_many :labs, class_name: "ProductLab"
   has_many :product_user, class_name: "ProductsUser"
 
