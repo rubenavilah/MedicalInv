@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      @product.labs.create(product_lab_params) if product_lab_params[:lab_id]
       flash[:success] = "Flight created. Ok"
       redirect_to products_path
     else
@@ -67,5 +68,9 @@ class ProductsController < ApplicationController
   #strong parameters
   def product_params
     params.require(:product).permit(:product_name, :product_price, :product_image)
+  end
+
+  def product_lab_params
+    params.require(:product).permit(:lab_id)
   end
 end

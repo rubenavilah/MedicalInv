@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# Pry for debugging code. Use anywhere in your code binding.pry and see the magic
+gem 'pry'
 # Devise for sign stuff...
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
