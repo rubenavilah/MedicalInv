@@ -13,7 +13,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-    
+
   def extension_white_list
     %w(jpg jpeg png gif swf)
   end
@@ -27,7 +27,7 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process scale: [200, 300]
+   process scale: [200, 300]
   #
   # def scale(width, height)
   #   # do something
