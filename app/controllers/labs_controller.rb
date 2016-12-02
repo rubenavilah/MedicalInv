@@ -62,5 +62,5 @@ def find_lab
 end
 
 def lab_params
-  params.require(:lab).permit(:lab_name)
+  params.require(:lab).permit(:lab_name,:avatar)
 end

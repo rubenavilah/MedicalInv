@@ -17,6 +17,11 @@
   <div class="form-group">
     <%= f.label :lab_name%>
     <%= f.text_field :lab_name, class: "form-control" %>
+    <div>
+        <%= f.file_field :avatar %>
+    </div>
+
+
   </div>
   <%= f.submit "#{form_name} lab", class: "btn btn-primary" %>
   <a href="<%= labs_path %>" class="btn btn-default"> View all </a>
