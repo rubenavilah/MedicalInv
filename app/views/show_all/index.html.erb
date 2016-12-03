@@ -1,0 +1,42 @@
+<table id="table"
+			 data-toggle="table"
+			 data-search="true"
+			 data-filter-control="true"
+			 data-show-export="true"
+			 data-click-to-select="true"
+			 data-toolbar="#toolbar">
+	<thead>
+		<tr>
+			<th data-search="true" data-field="prenom" data-filter-control="input" data-sortable="true">Product Name</th>
+			<th data-search="true" data-field="date" data-filter-control="select" data-sortable="true">Product Lab</th>
+			<th data-search="true" data-field="examen" data-filter-control="select" data-sortable="true">Expired date</th>
+			<th data-search="true" data-field="note" data-sortable="true">Price</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |p| %>
+			<tr>
+				<td><%= p.product_name %></td>
+				<td>
+				<% p.labs.each do |l|%>
+					<%= l.lab.lab_name %>,
+				<% end if p.labs.any? %>
+				</td>
+				<td><%= p.product_name %></td>
+				<td><%= p.product_price %></td>
+			</tr>
+		<% end if @products.any? %>
+		<tr>
+			<td>Acetaminofen</td>
+			<td>Biochem</td>
+			<td>10/05/2016</td>
+			<td>560</td>
+		</tr>
+		<tr>
+			<td>Dolex</td>
+			<td>Beinger</td>
+			<td>10/05/2016</td>
+			<td>5485</td>
+		</tr>
+	</tbody>
+</table>
