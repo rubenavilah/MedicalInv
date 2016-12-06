@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @lab.each do |a| %>
+      <% @labs.each do |a| %>
         <tr>
           <ul>
             <td class="text-center"><strong><%= a.lab_name %></strong></td>
@@ -20,7 +20,7 @@
             <a href="<%= lab_path(a.id) %>" class="btn btn-info"> Show </a></td>
           </ul>
         </article>
-      <% end if @lab.any? %>
+      <% end if @labs.any? %>
     </tbody>
   </table>
 
