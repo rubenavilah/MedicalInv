@@ -1,7 +1,7 @@
 class LabsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @lab = Lab.all
+    @labs = Lab.all
   end
 
   def new

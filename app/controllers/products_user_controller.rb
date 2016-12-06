@@ -5,8 +5,8 @@ class ProductsUserController < ApplicationController
   end
 
   def new
-    @product_user = ProductsUser.new
-    @products_lab = Product.all
+    @products_user = ProductsUser.new
+    @products = Product.all
     @labs = Lab.all
   end
 

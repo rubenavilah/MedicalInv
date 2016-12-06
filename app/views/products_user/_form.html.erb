@@ -1,6 +1,6 @@
 <h1 class="text-center">  <%= form_name %> products_user </h1>
-<%= form_for @product_user , url: "products_user_path" ,method: (form_name.downcase == 'edit' ? 'put' : 'post') do |f| %>
-  <% if @product_user.errors.any? %>
+<%= form_for @products_user , url: "products_user_path" ,method: (form_name.downcase == 'edit' ? 'put' : 'post') do |f| %>
+  <% if @products_user.errors.any? %>
       <div id="error_explanation">
         <h2>
           <%= pluralize(@products_user.errors.count, "error") %> prohibited
@@ -14,7 +14,7 @@
       </div>
     <% end %>
     <div class="form-group">
-      <%= f.label :product_and_lab%>
+      <%= f.label :product_and_lab %>
       <select name="product_user[lab_id]" class="form-control" >
         <% @products.each do |a| %>
           <option value="<%= a.id %>"> <%= a.product_name %> </option>

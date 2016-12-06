@@ -18,7 +18,9 @@
             <td class="text-center"><strong><%= a.product_name %></strong></td>
             <td class="text-center">
       				<% a.labs.each do |l|%>
-      					<%= l.lab.lab_name %> , 
+                <% if l.lab %>
+      					  <%= l.lab.lab_name %> ,
+                <% end %>
       				<% end if a.labs.any? %>
     				</td>
             <td class="text-center"><a href="<%= product_path(a.id) %>" data-method="delete" class="btn btn-danger"> Delete </a>
