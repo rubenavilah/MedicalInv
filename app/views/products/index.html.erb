@@ -3,14 +3,30 @@
   <section class="row text-center cities-controls">
       <a href="<%= new_product_path %>" class="btn btn-default"> New Product </a>
   </section>
-  <% @products.each do |a| %>
-    <article class="row">
-      <ul>
-        <li class="col-md-2"><strong><%= a.product_name %></strong></li>
-        <li class="col-md-1"><a href="<%= product_path(a.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
-        <li class="col-md-1"><a href="<%= edit_product_path(a.id) %>" class="btn btn-primary"> Edit </a></li>
-        <li class="col-md-1"><a href="<%= product_path(a.id) %>" class="btn btn-info"> Show </a></li>
-      </ul>
-    </article>
-  <% end if @products.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Product name</th>
+        <th class="text-center">Lab name</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |a| %>
+        <tr>
+          <ul>
+            <td class="text-center"><strong><%= a.product_name %></strong></td>
+            <td class="text-center">
+      				<% a.labs.each do |l|%>
+      					<%= l.lab.lab_name %> , 
+      				<% end if a.labs.any? %>
+    				</td>
+            <td class="text-center"><a href="<%= product_path(a.id) %>" data-method="delete" class="btn btn-danger"> Delete </a>
+            <a href="<%= edit_product_path(a.id) %>" class="btn btn-primary"> Edit </a>
+            <a href="<%= product_path(a.id) %>" class="btn btn-info"> Show </a></td>
+          </ul>
+        </article>
+      <% end if @products.any? %>
+    </tbody>
+  </table>
 </div>

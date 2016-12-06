@@ -3,14 +3,25 @@
   <section class="row text-center cities-controls">
       <a href="<%= new_lab_path %>" class="btn btn-default"> New Lab </a>
   </section>
-  <% @lab.each do |a| %>
-    <article class="row city">
-      <ul>
-        <li class="col-md-2"><strong><%= a.lab_name %></strong></li>
-        <li class="col-md-1"><a href="<%= lab_path(a.id) %>" data-method="delete" class="btn btn-danger"> Delete </a></li>
-        <li class="col-md-1"><a href="<%= edit_lab_path(a.id) %>" class="btn btn-primary"> Edit </a></li>
-        <li class="col-md-1"><a href="<%= lab_path(a.id) %>" class="btn btn-info"> Show </a></li>
-      </ul>
-    </article>
-  <% end if @lab.any? %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="text-center">Laboratorie name</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lab.each do |a| %>
+        <tr>
+          <ul>
+            <td class="text-center"><strong><%= a.lab_name %></strong></td>
+            <td class="text-center"><a href="<%= lab_path(a.id) %>" data-method="delete" class="btn btn-danger"> Delete </a>
+            <a href="<%= edit_lab_path(a.id) %>" class="btn btn-primary"> Edit </a>
+            <a href="<%= lab_path(a.id) %>" class="btn btn-info"> Show </a></td>
+          </ul>
+        </article>
+      <% end if @lab.any? %>
+    </tbody>
+  </table>
+
 </div>
