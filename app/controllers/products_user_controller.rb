@@ -1,13 +1,13 @@
 class ProductsUserController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @products_user = ProductsUser.all
   end
 
   def new
     @product_user = ProductsUser.new
-    @products = Product.all
+    @products_lab = ProductsLab.all
     @labs = Lab.all
   end
 
@@ -20,6 +20,7 @@ class ProductsUserController < ApplicationController
   end
 
   def create
+    binding.pry
     @product_user = ProductsUser.new(product_user_params)
     if @product_user.save
       flash[:success] = "Created :D"
@@ -40,14 +41,14 @@ class ProductsUserController < ApplicationController
   end
 
   def update
-    find_user_product
-    if @product_user(product_user_params)
-      flash[:success] = "Updated"
-      redirect_to product_user_path
-    else
-      flash[:error] = "We have problems :("
-      render 'edit'
-    end
+    #find_user_product
+    #if @product_user(product_user_params)
+    #  flash[:success] = "Updated"
+    #  redirect_to product_user_path
+    #else
+    #  flash[:error] = "We have problems :("
+    #  render 'edit'
+    #end
   end
 
   def show
@@ -66,7 +67,7 @@ class ProductsUserController < ApplicationController
 
   #strong parameters
   def product_user_params
-    params.require(:product_user).permit(:product_quantity, :product_caducity, :product)
+    params.require(:product_user).permit(:product_quantity, :product_caducity, :product, :user)
   end
 
   def product_lab_params

@@ -13,6 +13,8 @@
       <nav class="navbar navbar-default">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <a class="navbar-brand" href="<%= root_path %>">Medical inventory <%= current_user ? "| #{current_user.email}" : '' %></a>
+          <a class="navbar-brand" href="<%= products_path %>">Products </a>
+          <a class="navbar-brand" href="<%= labs_path %>">Labs </a>
           <ul class="nav navbar-nav navbar-right">
               <% if !current_user %>
                 <li><a href="<%= new_user_session_path %>">Log in</a></li>
